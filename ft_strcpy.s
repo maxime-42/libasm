@@ -1,7 +1,7 @@
 global ft_strcpy
 
 ft_strcpy:
-	move		rcx, 0				; on copie 0 dans rcx
+	mov		rcx, 0				; on copie 0 dans rcx
 
 loop:
 	cmp		byte [rsi + rcx], 0		; si rsi[rcx] == '\0' --> ZF = 1
