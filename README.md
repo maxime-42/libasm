@@ -12,6 +12,7 @@ https://stackoverflow.com/questions/10057443/explain-the-concept-of-a-stack-fram
 https://www.youtube.com/watch?v=VQAKkuLL31g&list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn&index=1<br>
 https://lukaswoodtli.github.io/x86_calling_conventions.html<br>
 https://www.geeksforgeeks.org/different-classes-of-cpu-registers/<br>
-this book really helped me https://www.oreilly.com/library/view/low-level-programming-c/9781484224021/
-you can get it free in internet ;) 
-you can see little extrait : 
+this book really helped me :
+https://www.oreilly.com/library/view/low-level-programming-c/9781484224021/ you can get it free in internet ;) <br>
+you can see little extrait : <br>
+here https://github.com/maxime-42/libasm/tree/main/extrait_book
