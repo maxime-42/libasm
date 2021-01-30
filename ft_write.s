@@ -3,18 +3,18 @@ global ft_write
 extern __errno_location
 
 ft_write:
-        mov rax , 1     				; num d'app system de write sur linux
+        mov rax , 1     				; write system app number on linux
         syscall       					; app system
-        cmp rax , 0   					; verification d'erreur 
-        jl  error      					; si rax (qui correspond au retour du syscall) negatif = error
+        cmp rax , 0   					; error check
+        jl  error      					; if rax (which corresponds to the return of the syscall) negative = error
         ret
 
 error:
-    	neg rax                         ; les codes errno sont positif
+    	neg rax                         ; errno codes are positive
 		mov r10, rax					; store value rax in r10
 		push r10						; store value in stack
-        call    __errno_location        ; appeler la fonction __errno_location qui renvoie l'adresse ou mettre l'erreur 
+        call    __errno_location        ; call the function __errno_location which returns the address or put the error
 		pop r10
-		mov [rax], r10 					; ici rax contient l'adresse de errno donc en faisant ca on met rdi dans errno
+		mov [rax], r10 					; here rax contains the address of errno so by doing this we put rdi in errno
 		mov rax, -1
 		ret

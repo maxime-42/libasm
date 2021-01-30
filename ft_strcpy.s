@@ -1,17 +1,17 @@
 global ft_strcpy
 
 ft_strcpy:
-	mov		rcx, 0				; on copie 0 dans rcx
+	mov		rcx, 0					; on copie 0 dans rcx
 
 loop:
-	cmp		byte [rsi + rcx], 0		; si rsi[rcx] == '\0' --> ZF = 1
+	cmp		byte [rsi + rcx], 0		; if rsi[rcx] == '\0' --> ZF = 1
 	jz		return					; si ZF = 1 on va à return
-	mov		dl, [rsi + rcx]			; copie le caractere à copier (rsi[rcx]) dans dl (car dl fait un 1 octet)
-	mov		[rdi + rcx], dl			; copie le caractere à copier qui est dans dl dans rdi[rcx]
-	inc		rcx						; on incremente rcx
+	mov		dl, [rsi + rcx]			; copy the character to copy (rsi [rcx]) to dl (because dl is 1 byte)
+	mov		[rdi + rcx], dl			; copy the character to copy which is in dl to rdi [rcx]
+	inc		rcx						; we increment rcx
 	jmp		loop					; on loop
 
 return:
-	mov		byte [rdi + rcx], 0		; on ajoute le 0 final
-	mov		rax, rdi				; on met dans rax la char * qu'on renvoie
+	mov		byte [rdi + rcx], 0		; we add the final 0
+	mov		rax, rdi				; we put in rax the char * we send back
 	ret

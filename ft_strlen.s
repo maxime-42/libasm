@@ -2,13 +2,12 @@ section .text
 global ft_strlen
 
 ft_strlen:
-    mov rax, 0          ; mettre les compteurs a zero/On compte avec rax car on veut retourner la valeur comptee
-
+    mov rax, 0          		; init rax to zero
 loop:
-    cmp BYTE [rdi + rax] , 0    ; verifier si on est pas arriver au char null
-    je end                      ; si char null retourner
-    inc rax                     ; sinon incrementer le compteur (i++)
-    jmp loop                   ; continuer la boucle
+    cmp BYTE [rdi + rax] , 0    ; check if we haven't reached the null char
+    je end                      ; if char null retourner
+    inc rax                     ; otherwise increase the compteur
+    jmp loop                   	; continue the loop
 
 end:
-    ret                         ; retourner rax
+    ret                         ; return rax
